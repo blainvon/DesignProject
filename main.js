@@ -73,6 +73,4 @@ window.onload = function () {
             }
         }
     });
-
-
 };
