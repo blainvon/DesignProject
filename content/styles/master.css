@@ -1,0 +1,256 @@
+body {
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+/*-- Navbar Adjustments --*/
+
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+    border: 0 none;
+}
+
+.navbar-nav {
+    float: right !important;
+}
+
+/*.navbar-header {
+    margin-left: 1% !important;
+}*/
+
+/*-- End of Navbar Adjustments --*/
+/*-- Width Adjustments --*/
+
+.width-100 {
+    width: 100%;
+}
+
+/*-- End of Width Adjustments --*/
+/*-- BriteCore Theme --*/
+
+/* Header Color */
+
+.britecore-header {
+    background-color: #004B54;
+    border-color: #004B54;
+}
+
+/* Nav Links Color */
+
+.nav > li > a {
+    color: #f4f4f4;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+    background: #00282d !important;
+}
+
+.nav > li > a > i {
+    color: #92AEB2;
+}
+
+.navbar-toggle .icon-bar {
+    background-color: #f4f4f4;
+}
+
+.btn-core {
+    color: #f4f4f4;
+    background-color: #008CA3;
+    border-color: transparent;
+}
+
+.btn-core:hover,
+.btn-core:focus {
+    color: #f4f4f4;
+    background-color: #007b8f;
+}
+
+/* Content Color */
+
+label {
+    color: #555;
+}
+
+.section-date,
+.section-vin,
+.section-group {
+    background: #f1f1f1;
+}
+
+.section-display {
+    background: #007E92;
+    color: #f4f4f4;
+}
+
+.section-display .light-cyan {
+    color: #81C6CF;
+}
+
+/*-- End of BriteCore Theme --*/
+/*-- Content --*/
+
+.h3 {
+    margin-top: 0 !important;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+.main-heading {
+    padding: 5px 20px 20px 20px;
+}
+
+.content-wrap {
+    padding: 30px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+    border: 1px solid #f1f1f1;
+}
+
+.content-wrap hr {
+    margin-top: 50px !important;
+}
+
+.action {
+    padding: 10px 0;
+}
+
+.section-date,
+.section-vin,
+.section-group,
+.section-display {
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.section-vin,
+.section-date {
+    margin: 15px 0;
+}
+
+/*-- End of Content --*/
+/*-- Media Queries --*/
+
+@media (max-width: 768px) {
+    .navbar-nav .dropdown-toggle {
+        display: none !important;
+    }
+
+    .content-wrap {
+        margin-bottom: 10px;
+    }
+
+    .navbar-nav {
+        margin: 7.5px -15px;
+    }
+
+    .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+        padding: 5px !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .section-vin,
+    .section-date {
+        margin: 0 !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .content-wrap {
+        margin-bottom: 10px;
+    }
+
+    .navbar-brand {
+        padding: 20px 15px !important;
+    }
+}
+
+/*-- End of Media Queries --*/
+/*-- Temp Adjustments --*/
+
+.fa-fw {
+    width: 1.5em !important;
+}
+
+h2 {
+    margin-top: 0 !important;
+}
+
+/*-- End of Temp Adjustments --*/
+/*-- Vue Modal --*/
+
+.modal-mask {
+    position: fixed;
+    z-index: 9998;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    display: table;
+    transition: opacity .3s ease;
+}
+
+.modal-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.modal-container {
+    width: 600px;
+    margin: 0px auto;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+    transition: all .3s ease;
+}
+
+.modal-header {
+    padding: 15px 5px 5px 15px;
+    background: #00808f;
+    color: #fff;
+}
+
+.modal-header h3 {
+    margin-top: 0;
+}
+
+.modal-body {
+    margin: 20px 0;
+}
+
+.modal-default-button {
+    float: right;
+}
+
+.modal-enter {
+    opacity: 0;
+}
+
+.modal-leave-active {
+    opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+
+
+

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <title>BriteCore</title>
+
+    <!-- Third Party -->
+    <script type="application/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="application/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+    <script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue-strap/1.1.40/vue-strap.js">
+    </script>
+    <script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vuex/3.0.1/vuex.js"></script>
+    <script type="application/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
+    <script type="application/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.5.0/vue-resource.min.js"></script>
+    <script type="application/javascript" src="main.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="content/styles/master.css">
+
+</head>
+<body>
+<nav class="navbar britecore-header">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img src="content/images/logo.png" width="130"></a>
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false"><i class="fa fa-lg fa-caret-down" aria-hidden="true"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="col-lg-offset-2">
+                <ul class="nav navbar-nav">
+                    <li><a href="#"><i class="fa fa-fw fa-umbrella" aria-hidden="true"></i> Polices <span
+                            class="sr-only">(current)</span></a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-bolt" aria-hidden="true"></i> Claims</a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-user" aria-hidden="true"></i> Contacts</a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-bar-chart" aria-hidden="true"></i>
+                        Data</a></li>
+                    <li class="active"><a href="#"><i class="fa fa-fw fa-book" aria-hidden="true"></i> Lines</a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-globe" aria-hidden="true"></i> All Modules</a></li>
+                </ul>
+            </div>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<div id="property">
+    <div class="container-fluid">
+        <div class="main-heading" id="titlePage">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>{{title}}</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row no-margin">
+            <div class="col-lg-3">
+                <div class="content-wrap">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h2 class="bold">Field Types</h2>
+                            <form>
+                                <div class="form-group">
+                                    <label for="filterTypes">Filter Types</label>
+                                    <input type="text" class="form-control" id="filterTypes">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-sm-4 col-md-12">
+                            <div class="section-display">
+                                <h3 class="bold h3"><i class="fa fa-header light-cyan" aria-hidden="true"></i> Text</h3>
+                                <div>
+                                    <small class="light-cyan">Definition</small>
+                                    <p>String of text</p>
+                                </div>
+                                <div>
+                                    <small class="light-cyan">Default Display</small>
+                                    <p>Free-form text input</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-12">
+                            <div class="section-date">
+                                <div>
+                                    <h3 class="bold h3"><i class="fa fa-calendar" aria-hidden="true"></i> Date</h3>
+                                </div>
+                                <div>
+                                    <span>Definition</span>
+                                    <p class="bold">Standard ISO format date</p>
+                                </div>
+                                <div>
+                                    <span>Default Display</span>
+                                    <p class="bold">Datepicker, with configurable format</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-12">
+                            <div class="section-vin">
+                                <div>
+                                    <h3 class="bold h3"><i class="fa fa-car" aria-hidden="true"></i> VIN</h3>
+                                    <div>
+                                        <span>Definition</span>
+                                        <p class="bold">Vehicle Identification Number</p>
+                                    </div>
+                                    <div>
+                                        <span>Default Display</span>
+                                        <p class="bold">Free-form text input</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="content-wrap">
+                    <h2 class="bold">Field Details</h2>
+                    <form data-toggle="validator" role="form">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="displayLabel">Display Label</label>
+                                            <input type="text" name="label" class="form-control" id="displayLabel"
+                                                   data-role="tagsinput">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="defaultValue">Default Value</label>
+                                            <input type="text" class="form-control" id="defaultValue">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="customValidation">Custom Validation</label>
+                                            <input type="text" class="form-control" id="customValidation">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="referenceName">Reference Name</label>
+                                            <input type="text" class="form-control" id="referenceName"
+                                                   v-on:blur="referenceName()">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <h3 class="bold">Tags</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div id="tagGroup">
+                                            <tags-component></tags-component>
+                                        </div>
+                                        <div class="col-lg-6">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="col-lg-12">
+                                    <div class="section-group" id="fieldGroup">
+                                        <h3 class="bold h3">Field Groups</h3>
+                                        <p>Choose a group for this input</p>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="list-group">
+                                                    <a href="#" class="list-group-item" v-for="event in events">
+                                                        <button type="button" class="close"
+                                                                v-on:click="deleteEvent(event.id)"><span
+                                                                aria-hidden="true">&times;</span></button>
+                                                        <h4 class="list-group-item-heading bold">
+                                                            {{ event.name }}
+                                                        </h4>
+                                                        <p class="list-group-item-text" v-if="event.description">{{
+                                                            event.description }}</p>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn btn-core width-100" data-toggle="modal"
+                                                data-target="#exampleModal">
+                                            Add A New Group
+                                        </button>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                             aria-labelledby="exampleModalLabel"
+                                             aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading britecore-header-modal">
+                                                                <h3 class="bold">Add New Field Group</h3>
+                                                            </div>
+                                                            <div class="panel-body">
+                                                                <div class="form-group">
+                                                                    <input class="form-control" placeholder="Group Name"
+                                                                           v-model="event.name">
+                                                                </div>
+
+                                                                <div class="form-group">
+                                    <textarea class="form-control" placeholder="Group Description"
+                                              v-model="event.description"></textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-core" v-on:click="addEvent"
+                                                                data-dismiss="modal">Save
+                                                            Changes
+                                                        </button>
+                                                        <button type="button" class="btn btn-default"
+                                                                data-dismiss="modal">Close
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <hr/>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="action">
+                                <div class="right">
+                                    <button class="btn btn-core">Save Changes</button>
+                                    <button class="btn btn-default">Cancel Changes</button>
+                                    <button class="btn btn-danger">Delete Input</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('#exampleModal').on('shown.bs.modal', function () {
+        $('#myInput').trigger('focus')
+    })
+</script>
+</body>
+</html>
